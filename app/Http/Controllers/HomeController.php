@@ -23,6 +23,8 @@ class HomeController extends Controller
 //        dd($car->features, $car->primaryImage, $car->images);
 //        $car = Car::find(1);
 //        dd($car->favouredUsers);
+        $maker=Maker::factory()->make();
+        dd($maker);
 
 
         return view('home.index');
