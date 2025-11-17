@@ -25,7 +25,7 @@ class CarFeaturesFactory extends Factory
             //
             'abs'=>fake()->boolean(),
             'air_conditioning'=>fake()->boolean(),
-            'power_window'=>fake()->boolean(),
+            'power_windows'=>fake()->boolean(),
             'power_door_locks'=>fake()->boolean(),
             'cruise_control'=>fake()->boolean(),
             'bluetooth_connectivity'=>fake()->boolean(),
