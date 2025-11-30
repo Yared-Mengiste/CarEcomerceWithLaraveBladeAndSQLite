@@ -47,12 +47,12 @@ class Car extends Model
     }
     public function maker():BelongsTo
     {
-        return $this->belongsTo(User::class, 'maker_id', 'id');
+        return $this->belongsTo(Maker::class, 'maker_id', 'id');
     }
 
     public function model():BelongsTo
     {
-        return $this->belongsTo(Car::class, 'model_id', 'id');
+        return $this->belongsTo(\App\Models\Model::class, 'model_id', 'id');
     }
     public function owner():BelongsTo
     {

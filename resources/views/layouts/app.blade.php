@@ -1,5 +1,5 @@
-@props(['title'=>''])
-<x-base-layout :title="$title">
+@props(['title'=>'', 'cssClass'=>null])
+<x-base-layout :title="$title" :$cssClass>
 {{--    @include('components.layouts.header')--}}
     <x-layouts.header />
     {{$slot}}
