@@ -26,6 +26,7 @@ class HomeController extends Controller
 //        $maker=Maker::factory()->make();
 //        dd($maker);
         $cars = Car::where('published_at', '<', now())
+            ->with(['model', 'fuelType', 'maker', 'city', 'primaryImage', 'carType'])
             ->orderBy('published_at', 'desc')
             ->limit(30)
             ->get();

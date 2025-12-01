@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Pest\TestCaseMethodFilters\TodoTestCaseFilter;
 
 class CarController extends Controller
 {
@@ -15,6 +16,7 @@ class CarController extends Controller
     {
         $cars = User::find(1)
             ->cars()
+            ->with(['primaryImage', 'maker', 'model'])
             ->orderBy('created_at', 'desc')
             ->get();
         return view('car.index', compact('cars'));
@@ -62,7 +64,9 @@ class CarController extends Controller
 
     public function search()
     {
-        $query = Car::where('published_at', '<', now())->orderBy('published_at', 'desc');
+        $query = Car::where('published_at', '<', now())
+            ->with(['model', 'fuelType', 'maker', 'city', 'primaryImage', 'carType'])
+            ->orderBy('published_at', 'desc');
         $carCount = $query->count();
         $cars = $query->paginate(30);
         return view('car.search', compact('cars', 'carCount'));
@@ -74,5 +78,13 @@ class CarController extends Controller
     public function destroy(Car $car)
     {
         //
+    }
+    public function watchList()
+    {
+        //TODO i come back to this
+        $cars = User::find(4)
+            ->favouriteCars()
+            ->with(['model', 'fuelType', 'maker', 'city', 'primaryImage', 'carType'])->get();
+        return view('car.watchList', compact('cars'));
     }
 }

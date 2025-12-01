@@ -16,7 +16,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($cars as $car)
+                            @forelse($cars as $car)
                             <tr>
                                 <td>
                                     <img
@@ -26,7 +26,7 @@
                                     />
                                 </td>
                                 <td>{{$car->year}} - {{$car->maker->name}} {{$car->model->name}}</td>
-                                <td>{{$car->created_at}}</td>
+                                <td>{{$car->getCreatedAt()}}</td>
                                 <td>{{$car->published_at ? 'Yes': 'No'}}</td>
                                 <td class="">
                                     <a
@@ -90,7 +90,13 @@
                                     </button>
                                 </td>
                             </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="5" class="text-center p-large">
+                                        You don't have cars yet. <a href="{{route('car.create')}}">Add new car</a>
+                                    </td>
+                                </tr>
+                            @endforelse
                             </tbody>
                         </table>
                     </div>
