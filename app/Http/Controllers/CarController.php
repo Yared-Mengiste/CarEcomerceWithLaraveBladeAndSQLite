@@ -18,7 +18,7 @@ class CarController extends Controller
             ->cars()
             ->with(['primaryImage', 'maker', 'model'])
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(15);
         return view('car.index', compact('cars'));
     }
 
@@ -67,9 +67,8 @@ class CarController extends Controller
         $query = Car::where('published_at', '<', now())
             ->with(['model', 'fuelType', 'maker', 'city', 'primaryImage', 'carType'])
             ->orderBy('published_at', 'desc');
-        $carCount = $query->count();
-        $cars = $query->paginate(30);
-        return view('car.search', compact('cars', 'carCount'));
+        $cars = $query->paginate(10);
+        return view('car.search', compact('cars'));
     }
 
     /**
@@ -84,7 +83,7 @@ class CarController extends Controller
         //TODO i come back to this
         $cars = User::find(4)
             ->favouriteCars()
-            ->with(['model', 'fuelType', 'maker', 'city', 'primaryImage', 'carType'])->get();
+            ->with(['model', 'fuelType', 'maker', 'city', 'primaryImage', 'carType'])->paginate(15);
         return view('car.watchList', compact('cars'));
     }
 }
