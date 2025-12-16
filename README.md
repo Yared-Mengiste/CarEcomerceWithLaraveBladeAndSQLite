@@ -128,3 +128,11 @@ If you want, I can also:
 -   wire up Laravel Breeze for basic auth.
 
 Tell me which of those you'd like next.
+
+## Screenshots
+
+<p align="center">
+  <img src="" width="600" />
+</p>
+
+
