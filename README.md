@@ -1,4 +1,4 @@
-<img width="1920" height="1093" alt="search" src="https://github.com/user-attachments/assets/e9994046-ab6f-45b9-b1e9-c73752dd9b6c" /># CarEcomerceWithLaravelBladeAndSQLite
+# CarEcomerceWithLaravelBladeAndSQLite
 
 Compact Laravel application that demonstrates a small car e-commerce website built with Blade views and an SQLite database. It includes features to list cars, view details, create/edit cars (admin-style forms), and a simple search.
 
