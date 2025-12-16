@@ -135,14 +135,17 @@ Tell me which of those you'd like next.
 <p align="center">
   <img src="screenshots/home.png" width="600" />
 </p>
+
 ### Search
 <p align="center">
   <img src="screenshots/search.png" width="600" />
 </p>
+
 ### Signup
 <p align="center">
   <img src="screenshots/signup.png" width="600" />
 </p>
+
 ### Watchlist
 <p align="center">
   <img src="screenshots/watchlist.png" width="600" />
